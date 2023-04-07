@@ -21,17 +21,17 @@
 为什么不用TypeScript? (当然是因为我没学过，不想学了)
 大家应该普遍对python会比较熟悉，方便大家根据自己需要去定制化。
 
-##application
+## application
 Windows: 由py3exe (cx_Freeze) 将sourceCode里面的py脚本打包成的可在Windows平台下运行的exe程序。
 Linux: TODO
 MacOS: TODO
 
-##py3exe
+## py3exe
 一旦你编辑好了你的sourceCode，你可以在py3exe文件夹中的py3exe.py中定义好你的sourceCode的路径以及安装好的cx_Freeze的路径
 随后运行py3exe.py，它会在application文件夹中生成打包好的可在Windows平台下运行的exe程序。
 
-##sourceCode
+## sourceCode
 根据你的需要去修改功能或者添加功能
 
-##UI
+## UI
 根据你的喜好去调整UI界面并将其添加到你的sourcecode中，基于PyQt6
