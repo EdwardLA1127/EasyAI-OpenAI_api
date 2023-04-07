@@ -23,11 +23,9 @@
 
 ## application
 Windows: 由py3exe (cx_Freeze) 将sourceCode里面的py脚本打包成的可在Windows平台下运行的exe程序。
-Linux: TODO
-MacOS: TODO
 
 ## py3exe
-一旦你编辑好了你的sourceCode，你可以在py3exe文件夹中的py3exe.py中定义好你的sourceCode的路径以及安装好的cx_Freeze的路径
+一旦你编辑好了你的sourceCode，你可以在py3exe文件夹中的py3exe.py中定义好你的sourceCode的路径以及安装好的cx_Freeze的路径 
 随后运行py3exe.py，它会在application文件夹中生成打包好的可在Windows平台下运行的exe程序。
 
 ## sourceCode
