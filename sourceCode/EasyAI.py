@@ -5,13 +5,14 @@ Date: 2023-04-05 13:28:25
 Description: 
 Note: 
 LastEditor: Edward_LA
-LastEditTime: 2023-04-11 14:19:29
+LastEditTime: 2023-04-11 17:11:03
 '''
 import os
 import sys
 import openai
 import base64
 import pdb
+import requests
 from huaweicloudsdkcore.auth.credentials import BasicCredentials
 from huaweicloudsdksis.v1.region.sis_region import SisRegion
 from huaweicloudsdkcore.exceptions import exceptions
@@ -49,14 +50,14 @@ response = openai.ChatCompletion.create(
 
 '''
 ------
-HuaWei
+HuaWeiCloud
 ------
-hwak = ""
-hwsk = ""
+HWC_ak = ""
+HWC_sk = ""
 '''
 '''
 # Audio generate
-credentials = BasicCredentials(hwak, hwsk) 
+credentials = BasicCredentials(HWC_ak, HWC_sk) 
 
 client = SisClient.new_builder() \
     .with_credentials(credentials) \
@@ -75,6 +76,51 @@ wav_file = open("temp.wav", "wb")
 decode_string = base64.b64decode(encode_string)
 wav_file.write(decode_string)
 
+'''
+
+'''
+------
+stabilityAI
+------
+stabilityAI_key = ""
+'''
+'''
+engine_id = "stable-diffusion-512-v2-1"
+api_host = os.getenv('API_HOST', 'https://api.stability.ai')
+
+if stabilityAI_key is None:
+    raise Exception("Missing Stability API key.")
+
+response = requests.post(
+    f"{api_host}/v1/generation/{engine_id}/text-to-image",
+    headers={
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": f"Bearer {stabilityAI_key}"
+    },
+    json={
+        "text_prompts": [
+            {
+                "text": "A lighthouse on a cliff"
+            }
+        ],
+        "cfg_scale": 7,
+        "clip_guidance_preset": "FAST_BLUE",
+        "height": 512,
+        "width": 512,
+        "samples": 1,
+        "steps": 30,
+    },
+)
+
+if response.status_code != 200:
+    raise Exception("Non-200 response: " + str(response.text))
+
+data = response.json()
+
+for i, image in enumerate(data["artifacts"]):
+    with open(f"temp{i}.png", "wb") as f:
+        f.write(base64.b64decode(image["base64"]))
 '''
 
 '''

@@ -3,7 +3,7 @@
 
 <div align=center>
 
-![](./materials/logo.png)
+![](./materials/logo1.png)
 
 </div>
 
@@ -23,6 +23,11 @@
 </a>
 </p>
 
+<div align=center>
+
+![](./materials/logo2.png)
+
+</div>
 
 如果你想进一步更新EasyAI，并根据你自己的需要添加你需要的功能或者根据你自己的喜好修改UI界面，请看下面的文件介绍：
 
