@@ -25,7 +25,7 @@ from PyQt6.QtWidgets import QApplication, QWidget
 ------
 OpenAI
 ------
-openai.api_key = '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'
+openai.api_key = ''
 '''
 '''
 # Image generate
@@ -51,8 +51,8 @@ response = openai.ChatCompletion.create(
 ------
 HuaWei
 ------
-hwak = "MPSO6FNL74FOJDS71EI5"
-hwsk = "XqcRN0KhS0S6thbDqSj4KahunvuoaodsWu6xoYD8"
+hwak = ""
+hwsk = ""
 '''
 '''
 # Audio generate
