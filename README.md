@@ -20,11 +20,5 @@
 
 如果你想进一步更新EasyAI，并根据你自己的需要添加你需要的功能或者根据你自己的喜好修改UI界面，请看下面的文件介绍：
 
-## application
-Windows: 由py3exe (cx_Freeze) 将sourceCode里面的py脚本打包成的可在Windows平台下运行的exe程序。
-
 ## sourceCode
 根据你的需要去修改功能或者添加功能
-
-## UI
-根据你的喜好去调整UI界面并将其添加到你的sourcecode中，基于PyQt6
