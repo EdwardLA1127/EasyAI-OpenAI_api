@@ -23,6 +23,12 @@
 </a>
 </p>
 
+对话 (文本交互) (OpenAI)
+
+对话 (语音交互) (OpenAI + HuaWei Cloud)
+
+根据文本生成图片 (StabilityAI)
+
 <div align=center>
 
 ![](./materials/logo2.png)
