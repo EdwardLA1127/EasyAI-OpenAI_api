@@ -5,7 +5,7 @@ Date: 2023-04-05 13:28:25
 Description: 
 Note: 
 LastEditor: Edward_LA
-LastEditTime: 2023-04-11 13:39:07
+LastEditTime: 2023-04-11 14:19:29
 '''
 import os
 import sys
@@ -25,12 +25,12 @@ from PyQt6.QtWidgets import QApplication, QWidget
 ------
 OpenAI
 ------
-openai.api_key = ''
+openai.api_key = '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'
 '''
 '''
 # Image generate
 response = openai.Image.create(
-    prompt = 'Caudate', 
+    prompt = '给我设计一个关于彗星的logo', 
     n=1, 
     size = '1024x1024'
     )
@@ -51,8 +51,8 @@ response = openai.ChatCompletion.create(
 ------
 HuaWei
 ------
-hwak = ""
-hwsk = ""
+hwak = "MPSO6FNL74FOJDS71EI5"
+hwsk = "XqcRN0KhS0S6thbDqSj4KahunvuoaodsWu6xoYD8"
 '''
 '''
 # Audio generate
@@ -81,11 +81,12 @@ wav_file.write(decode_string)
 -----
 PyQt6
 -----
+'''
 
 app = QApplication(sys.argv)
 window = QWidget()
 window.show()
 app.exec()
-'''
+
 
 
