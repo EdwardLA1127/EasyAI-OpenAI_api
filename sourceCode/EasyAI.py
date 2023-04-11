@@ -5,7 +5,7 @@ Date: 2023-04-05 13:28:25
 Description: 
 Note: 
 LastEditor: Edward_LA
-LastEditTime: 2023-04-11 17:11:03
+LastEditTime: 2023-04-11 17:33:43
 '''
 import os
 import sys
@@ -133,3 +133,4 @@ app = QApplication(sys.argv)
 window = QWidget()
 window.show()
 app.exec()
+print('test')
