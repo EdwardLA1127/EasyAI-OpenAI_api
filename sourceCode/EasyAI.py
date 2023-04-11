@@ -5,7 +5,7 @@ Date: 2023-04-05 13:28:25
 Description: 
 Note: 
 LastEditor: Edward_LA
-LastEditTime: 2023-04-11 13:35:27
+LastEditTime: 2023-04-11 13:39:07
 '''
 import os
 import sys
@@ -25,8 +25,9 @@ from PyQt6.QtWidgets import QApplication, QWidget
 ------
 OpenAI
 ------
-openai.api_key = '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'
-
+openai.api_key = ''
+'''
+'''
 # Image generate
 response = openai.Image.create(
     prompt = 'Caudate', 
@@ -50,35 +51,31 @@ response = openai.ChatCompletion.create(
 ------
 HuaWei
 ------
+hwak = ""
+hwsk = ""
 '''
-if __name__ == "__main__":
-    ak = "MPSO6FNL74FOJDS71EI5"
-    sk = "XqcRN0KhS0S6thbDqSj4KahunvuoaodsWu6xoYD8"
+'''
+# Audio generate
+credentials = BasicCredentials(hwak, hwsk) 
 
-    credentials = BasicCredentials(ak, sk) 
+client = SisClient.new_builder() \
+    .with_credentials(credentials) \
+    .with_region(SisRegion.value_of("cn-east-3")) \
+    .build()
 
-    client = SisClient.new_builder() \
-        .with_credentials(credentials) \
-        .with_region(SisRegion.value_of("cn-east-3")) \
-        .build()
 
-    try:
-        request = RunTtsRequest()
-        request.body = PostCustomTTSReq(
-            text="你觉得我温柔吗",
-            config={'property':'chinese_huaxiaoru_common'}
-        )
-        response = client.run_tts(request)
-        encode_string = response.result.data
-        wav_file = open("temp.wav", "wb")
-        decode_string = base64.b64decode(encode_string)
-        wav_file.write(decode_string)
-    except exceptions.ClientRequestException as e:
-        print(e.status_code)
-        print(e.request_id)
-        print(e.error_code)
-        print(e.error_msg)
+request = RunTtsRequest()
+request.body = PostCustomTTSReq(
+    text="你觉得我温柔吗",
+    config={'property':'chinese_huaxiaoru_common'}
+)
+response = client.run_tts(request)
+encode_string = response.result.data
+wav_file = open("temp.wav", "wb")
+decode_string = base64.b64decode(encode_string)
+wav_file.write(decode_string)
 
+'''
 
 '''
 -----

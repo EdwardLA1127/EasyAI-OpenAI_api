@@ -1,5 +1,5 @@
 # EasyAI-OpenAI_api
-一款基于OpenAI的api编写的桌面应用
+一款基于OpenAI和HUAWEI_Cloud的api编写的桌面应用
 
 如果你想直接下载并使用EasyAI，根据你所使用的平台下载即可：
 
