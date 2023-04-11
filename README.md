@@ -27,7 +27,7 @@
 
 对话 (语音交互) (OpenAI + HuaWei Cloud)
 
-根据文本生成图片 (StabilityAI)
+根据文本生成图片 (StabilityAI / OpenAI)
 
 <div align=center>
 
