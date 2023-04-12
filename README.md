@@ -1,4 +1,4 @@
-# EasyAI-OpenAI_api
+# EasyAI (building)
 一款基于OpenAI, HUAWEI_Cloud和StabilityAI的api编写的桌面应用
 
 <div align=center>
